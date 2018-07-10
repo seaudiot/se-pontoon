@@ -1,0 +1,116 @@
+{
+  "name": "se-pontoon",
+  "description": "Pontoon tranlation app",
+  "scripts": {
+  },
+  "env": {
+    "ADMIN_EMAIL": "m.nahrgang@mivoc.com",
+    "ADMIN_NAME": "mnahrgang",
+    "ADMIN_PASSWORD": "WiGs,dsnmSw.",
+    "CELERY_ALWAYS_EAGER": {
+      "required": true
+    },
+    "DISABLE_COLLECTSTATIC": {
+      "required": true
+    },
+    "DJANGO_DEBUG": {
+      "required": true
+    },
+    "DJANGO_DEV": {
+      "required": true
+    },
+    "HEROKU_DEMO": {
+      "required": true
+    },
+    "MEMCACHE_PASSWORD": {
+      "required": true
+    },
+    "MEMCACHE_SERVERS": {
+      "required": true
+    },
+    "MEMCACHE_USERNAME": {
+      "required": true
+    },
+    "NEW_RELIC_API_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_APP_NAME": {
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LOG": {
+      "required": true
+    },
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "PROJECT_MANAGERS": {
+      "required": true
+    },
+    "RABBITMQ_APIKEY": {
+      "required": true
+    },
+    "RABBITMQ_URL": {
+      "required": true
+    },
+    "RAYGUN_APIKEY": {
+      "required": true
+    },
+    "SECRET_KEY": {
+      "required": true
+    },
+    "SITE_URL": {
+      "required": true
+    },
+    "SSH_CONFIG": {
+      "required": true
+    },
+    "SSH_KEY": {
+      "required": true
+    },
+    "STATIC_HOST": {
+      "required": true
+    },
+    "SVN_LD_LIBRARY_PATH": {
+      "required": true
+    },
+    "TZ": {
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "cloudamqp",
+    "memcachedcloud",
+    "newrelic",
+    "papertrail",
+    "heroku-postgresql",
+    "raygun"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/dmathieu/heroku-buildpack-submodules#0caf30af7737bf1bc32b7aafc009f19af3e603c1"
+    },
+    {
+      "url": "https://github.com/Osmose/heroku-buildpack-ssh"
+    },
+    {
+      "url": "https://github.com/mozilla/heroku-buildpack-apt.git#v0.1"
+    },
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
